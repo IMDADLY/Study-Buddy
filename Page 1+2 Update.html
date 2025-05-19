@@ -1,0 +1,333 @@
+<!doctype html>
+<html>
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Web Speech API Demo</title>
+    <style>
+		.white { 
+			color: white;
+			}
+		.Create-button {
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+			width: 300px;
+		  background-color: #e1ecf4;
+		  border-radius: 3px;
+		  border: 1px solid #7aa7c7;
+		  box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+		  box-sizing: border-box;
+		  color: #39739d;
+		  cursor: pointer;
+		  display: inline-block;
+		  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+		  font-size: 13px;
+		  font-weight: 400;
+		  line-height: 1.15385;
+		  margin: 0;
+		  outline: none;
+		  padding: 10px .8em;
+		  position: relative;
+		  text-align: center;
+		  text-decoration: none;
+		  user-select: none;
+		  -webkit-user-select: none;
+		  touch-action: manipulation;
+		  vertical-align: baseline;
+		  white-space: nowrap;
+		}
+
+		.Create-button:hover,
+		.Create-button:focus {
+		  background-color: #b3d3ea;
+		  color: #2c5777;
+		}
+
+		.Create-button:focus {
+		  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+		}
+
+		.Create-button:active {
+		  background-color: #a0c7e4;
+		  box-shadow: none;
+		  color: #2c5777;
+		}
+		.Stop-button {
+		  background-color: #e1ecf4;
+		  border-radius: 3px;
+		  border: 1px solid #7aa7c7;
+		  box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+		  box-sizing: border-box;
+		  color: #39739d;
+		  cursor: pointer;
+		  display: inline-block;
+		  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+		  font-size: 13px;
+		  font-weight: 400;
+		  line-height: 1.15385;
+		  margin: 0;
+		  outline: none;
+		  padding: 10px .8em;
+		  position: relative;
+		  text-align: center;
+		  text-decoration: none;
+		  user-select: none;
+		  -webkit-user-select: none;
+		  touch-action: manipulation;
+		  vertical-align: baseline;
+		  white-space: nowrap;
+		}
+
+		.Stop-button:hover,
+		.Stop-button:focus {
+		  background-color: #b3d3ea;
+		  color: #2c5777;
+		}
+
+		.Stop-button :focus {
+		  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+		}
+
+		.Stop-button:active {
+		  background-color: #a0c7e4;
+		  box-shadow: none;
+		  color: #2c5777;
+		}
+		.Record-button {
+		  background: #FF4742;
+		  border: 1px solid #FF4742;
+		  border-radius: 6px;
+		  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+		  box-sizing: border-box;
+		  color: #FFFFFF;
+		  cursor: pointer;
+		  display: inline-block;
+		  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+		  font-size: 14px;
+		  font-weight: 800;
+		  line-height: 12px;
+		  min-height: 40px;
+		  outline: 0;
+		  padding: 10px 14px;
+		  text-align: center;
+		  text-rendering: geometricprecision;
+		  text-transform: none;
+		  user-select: none;
+		  -webkit-user-select: none;
+		  touch-action: manipulation;
+		  vertical-align: middle;
+		}
+      body
+      {
+        max-width: 500px;
+        margin: 2em auto;
+        font-size: 20px;
+		  background-color: #222222;
+	  }
+      h1
+      {
+		    font-family: Helvetica, serif;
+        text-align: center;
+		 color: white;
+      }
+      h2
+      {
+		  font-family: helvetica, serif;
+        text-align: center;
+		  color: white;
+      }
+      .buttons-wrapper
+      {
+        text-align: center;
+      }
+ 
+      .hidden
+      {
+        display: none;
+      }
+ 
+      #transcription,
+      #log
+      {
+        display: block;
+        width: 100%;
+        height: 5em;
+        overflow-y: scroll;
+        border: 1px solid #333333;
+        line-height: 1.3em;
+      }
+u {
+				  font-family: Comic Sans MS, Comic Sans, cursive;
+  font-size:10px;
+	color: white;
+}
+h4 {
+  text-align: center;
+  letter-spacing: 2px;
+				margin: 0;
+	  position: absolute;
+	  font-family: Helvetica, sans-serif;
+	  font-size: 15px;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	color: white;
+}
+h3 {
+  text-align: justify;
+  letter-spacing: 2px;
+				margin: 0;
+	  position: absolute;
+	  font-family: Helvetica, sans-serif;
+	  font-size: 12px;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	color: white;
+}
+
+		.Createbutton {
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 19px 24px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+
+}
+
+.Createbutton:active,
+.Createbutton:hover {
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  .Createbutton {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+			p {
+font-family: Phantomsans, italic;
+  font-size: 12px;
+  text-align: justify;
+  letter-spacing: 1px;
+				margin: 0;
+  position: absolute;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+				color: white;
+		}		
+				.spectext {
+font-family: Phantomsans, italic;
+  font-size: 12px;
+  text-align: justify;
+  letter-spacing: 1px;
+}
+h6 {
+color: white;
+}	
+.questiontext{
+	display: block;
+    width: 100%;
+    height: 5em;
+    overflow-y: scroll;
+    border: 1px solid #333333;
+    line-height: 1.3em;
+}
+		 div.scroll {
+        margin: 4px, 4px;
+        padding: 4px;
+        background-color: #08c708;
+        width: 300px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+    </style>
+  </head>
+<body>
+				<h1>Study Buddy</h1>
+				<h4>Write. Record. Check.</h4>
+		<hr style="height:50pt; visibility:hidden;" />
+	<button id= "Createmain" class="Createbutton" onclick = "myFunction()" role="button">Create</button>
+			<hr style="height:25pt; visibility:hidden;" />
+			<p>Click button to start Learning!</p>
+				<div id="myDIV" style="display: none">
+				<br>	
+<h1>Test Preparation</h1>
+   <h2 id= "question">Question</h2>
+   <form onsubmit="return false">
+          <input id= "question_txt" type="text" class = "questiontext" placeholder="Enter your question" required>
+      <h2 id= "Answer">Answer </h2> 
+  <input id="transcription" type="text" class = "questiontext" placeholder="Enter your answer"></input>
+	    <br>
+		 <br>
+ 		 <br>
+		<input type='submit' id="Create" class="Create-button" value = "Create" </input>
+		<hr style="height:0.5pt; visibility:hidden;" />
+	 <p>Click button to record question and answer!</p>
+	  <br>
+   </form>
+   <br>
+   <br>
+  <a href="C:\Users\hello\Downloads\PP Fair Present\Page 3.html">
+     <input type="button" class = "Create-button" value= "NEXT"</input>
+<br>
+<br>
+	 <p>Click button if you finished recording your questions and answers!</p>
+    </div>
+    <span id="ws-unsupported" class="hidden">API not supported</span>
+				</div>
+    <script>
+		//Function for revealing Page 2 of the website
+		function myFunction() {
+		  	var x = document.getElementById("myDIV");
+		  	x.style.display = 'block'; 
+		}
+		
+	  document.getElementById('Create').addEventListener('click', function() {
+  		  var textBlob = new Blob([document.getElementById("transcription").value], {type:'text/plain'});
+		  var downloadLink = document.createElement("a");
+		  //if textbox is empty dont do enything
+		  if (document.getElementById("transcription").value.length<1){
+  		  	return false;
+		} else	
+			  {
+  		  		downloadLink.download = "rec.txt";
+  				let text = [document.getElementById("question_txt").value];
+  				downloadLink.download = text;
+  		  		downloadLink.innerHTML = "Download File";
+  		  		downloadLink.href = window.URL.createObjectURL(textBlob);
+  		  		downloadLink.click();
+  		      delete downloadLink;
+  		      delete textBlob;
+			  //problem in line 228, 229, The program does not allow user to record for the second time because of problem with the return statement. 
+			  //document.getElementById('question_txt').value = "";
+			  //document.getElementById('transcription').value = "";
+			  }
+          });
+</script>
+</body>
+</html>
