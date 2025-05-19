@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html>
+<head>
+  </head>
+  <style>	  
+	  .button-68 {
+		  width:200px;
+		  left: 30%;
+	    appearance: none;
+	    backface-visibility: hidden;
+	    background-color: #27ae60;
+	    border-radius: 8px;
+	    border-style: none;
+	    box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+	    box-sizing: border-box;
+	    color: #fff;
+	    cursor: pointer;
+	    display: inline-block;
+	    font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+	    font-size: 16px;
+	    font-weight: 600;
+	    letter-spacing: normal;
+	    line-height: 1.5;
+	    outline: none;
+	    overflow: hidden;
+	    padding: 13px 20px;
+	    position: relative;
+	    text-align: center;
+	    text-decoration: none;
+	    transform: translate3d(0, 0, 0);
+	    transition: all .3s;
+	    user-select: none;
+	    -webkit-user-select: none;
+	    touch-action: manipulation;
+	    vertical-align: top;
+	    white-space: nowrap;
+	  }
+
+	  .button-68:hover {
+	    background-color: #1e8449;
+	    opacity: 1;
+	    transform: translateY(0);
+	    transition-duration: .35s;
+	  }
+
+	  .button-68:active {
+	    transform: translateY(2px);
+	    transition-duration: .35s;
+	  }
+
+	  .button-68:hover {
+	    box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
+	  }
+		.button-8 {
+			width: 300px;
+		  background-color: #e1ecf4;
+		  border-radius: 3px;
+		  border: 1px solid #7aa7c7;
+		  box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+		  box-sizing: border-box;
+		  color: #39739d;
+		  cursor: pointer;
+		  display: inline-block;
+		  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+		  font-size: 13px;
+		  font-weight: 400;
+		  line-height: 1.15385;
+		  margin: 0;
+		  outline: none;
+		  padding: 10px .8em;
+		  position: relative;
+		  text-align: center;
+		  text-decoration: none;
+		  user-select: none;
+		  -webkit-user-select: none;
+		  touch-action: manipulation;
+		  vertical-align: baseline;
+		  white-space: nowrap;
+		}
+
+		.button-8:hover,
+		.button-8:focus {
+		  background-color: #b3d3ea;
+		  color: #2c5777;
+		}
+
+		.button-8:focus {
+		  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+		}
+
+		.button-8:active {
+		  background-color: #a0c7e4;
+		  box-shadow: none;
+		  color: #2c5777;
+		}
+		.button-9 {
+		  background-color: #e1ecf4;
+		  border-radius: 3px;
+		  border: 1px solid #7aa7c7;
+		  box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
+		  box-sizing: border-box;
+		  color: #39739d;
+		  cursor: pointer;
+		  display: inline-block;
+		  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+		  font-size: 13px;
+		  font-weight: 400;
+		  line-height: 1.15385;
+		  margin: 0;
+		  outline: none;
+		  padding: 10px .8em;
+		  position: relative;
+		  text-align: center;
+		  text-decoration: none;
+		  user-select: none;
+		  -webkit-user-select: none;
+		  touch-action: manipulation;
+		  vertical-align: baseline;
+		  white-space: nowrap;
+		}
+
+		.button-9:hover,
+		.button-9:focus {
+		  background-color: #b3d3ea;
+		  color: #2c5777;
+		}
+
+		.button-9 :focus {
+		  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+		}
+
+		.button-9:active {
+		  background-color: #a0c7e4;
+		  box-shadow: none;
+		  color: #2c5777;
+		}
+		.button-24 {
+		  background: #FF4742;
+		  border: 1px solid #FF4742;
+		  border-radius: 6px;
+		  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+		  box-sizing: border-box;
+		  color: #FFFFFF;
+		  cursor: pointer;
+		  display: inline-block;
+		  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+		  font-size: 14px;
+		  font-weight: 800;
+		  line-height: 12px;
+		  min-height: 40px;
+		  outline: 0;
+		  padding: 10px 14px;
+		  text-align: center;
+		  text-rendering: geometricprecision;
+		  text-transform: none;
+		  user-select: none;
+		  -webkit-user-select: none;
+		  touch-action: manipulation;
+		  vertical-align: middle;
+		}
+      body
+      {
+        max-width: 500px;
+        margin: 2em auto;
+        font-size: 20px;
+		background-color: #222222;
+	  }
+	  .rainbow-text {
+	    background-image: linear-gradient(to left, violet, indigo, blue, orange, red);
+	    -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+	  }
+      h1
+      {
+		    font-family: Helvetica, serif;
+        text-align: center;
+		  color: white;
+      }
+      h2
+      {
+		  font-family: helvetica, serif;
+        text-align: center;
+		  color: white;
+      }
+      .buttons-wrapper
+      {
+        text-align: center;
+      }
+ 
+      .hidden
+      {
+        display: none;
+      }
+ 
+      #transcription,
+      #log
+      {
+        display: block;
+        width: 100%;
+        height: 5em;
+        overflow-y: scroll;
+        border: 1px solid #333333;
+        line-height: 1.3em;
+      }
+    .transcription {
+}
+u {
+				  font-family: Comic Sans MS, Comic Sans, cursive;
+  font-size:10px;
+	color: white;
+}
+h4 {
+  text-align: center;
+  letter-spacing: 2px;
+				margin: 0;
+	  position: absolute;
+	  font-family: Helvetica, sans-serif;
+	  font-size: 15px;
+	top: ;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	color: white;
+}
+h3 {
+  text-align: justify;
+  letter-spacing: 2px;
+				margin: 0;
+	  position: absolute;
+	  font-family: Helvetica, sans-serif;
+	  font-size: 12px;
+	top: ;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	color: white;
+}
+
+		.button-63 {
+  margin: 0;
+  position: absolute;
+  top: ;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 20px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 19px 24px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+
+}
+
+.button-63:active,
+.button-63:hover {
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  .button-63 {
+    font-size: 24px;
+    min-width: 196px;
+  }
+}
+			p {
+font-family: Phantomsans, italic;
+  font-size: 12px;
+  text-align: justify;
+  letter-spacing: 1px;
+				margin: 0;
+  position: absolute;
+  top: ;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+				color: white;
+}
+h6 {
+  text-align: justify;
+  letter-spacing: 2px;
+				margin: 0;
+	  position: absolute;
+	  font-family: Helvetica, sans-serif;
+	  font-size: 12px;
+	top: ;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-decoration: underline;
+	color: white;
+}	
+.questiontext{
+	display: block;
+    width: 100%;
+    height: 5em;
+    overflow-y: scroll;
+    border: 1px solid #333333;
+    line-height: 1.3em;
+}
+	  table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+
+	  </style>
+  <body>
+    <input onchange="readFile(this)" type="file" style = "text-align:center">
+	
+	<!--BEGINNING OF API_-->
+     <h2 id= "question">Question</h2>
+            <h2 id= "question_txt" value= "filename"></h2>
+        <h2 id= "Answer">Answer </h2> 
+    <textarea id="transcription" required onkeypress="return false;"></textarea>
+      <label>
+		  <input 
+				 type="radio" 
+				 name="recognition-type" 
+				 value="final" 
+				 checked="checked" /> 
+			<u>Final Only</u>
+	  </label>
+      <label>
+		  <input 
+				 type="radio" 
+				 name="recognition-type" 
+				 value="interim" />
+		  <u>Interim</u>
+	  </label>
+      <div class="buttons-wrapper">
+  		<br>
+		  <input type="button" id="button-play-ws" class="button-24" value = "Record">
+        <input type = "button" id="button-stop-ws" class="button-9" value = "Stop Recording" >
+  	    <br>
+  		 <br>
+   		 <br>
+		  </div>
+  		<input type="submit" id="Create" class="button-68" value = "Test"  onclick="Similar(); addData()">
+  		<hr style="height:0.5pt; visibility:hidden;" />
+  	 <p>Click button to record answer!</p>
+	 <hr style="height:0.5pt; visibility:hidden;" />
+	 
+	 <p></p><p></p><p>
+		 <!--create table-->
+		 <table id="resulttable">
+			 <tr>
+   			  <th>FileData</th>
+    		  <th>Record Data</th>
+    		  <th>Matching(%)</th>
+ 		 </tr>
+
+		 </table>
+	 </p>
+  	  <br>
+  <br>
+      <span id="ws-unsupported" class="hidden">API not supported</span>
+	   <h2 id = "Check" style="display: none"></h2>
+		     <br>
+		
+    <script>
+		var filename ;
+		var filecontent;
+		var percentage;
+      function readFile(input) {
+        let file = input.files[0];
+		filename = file;
+		//(filename.name).replace(/\.[^.]*$/,'')
+		document.getElementById("question_txt").innerHTML = (filename.name).replace(/\.[^.]*$/,'') + "?";
+        let fileReader = new FileReader(); 
+        fileReader.readAsText(file); 
+        fileReader.onload = function() {
+          alert(fileReader.result);
+		  filecontent = fileReader.result; 
+        }; 
+        fileReader.onerror = function() {
+          alert(fileReader.error);
+        }; 
+      }
+	  function Similar() {  
+	  if (document.getElementById("transcription").value.length<1){
+	  	return false;
+	} else {
+			function checkSimilarity(){
+			  var str1 = filecontent;
+			  var str2 = document.getElementById("transcription").value;
+			  //document.getElementById("Check").innerHTML = (similarity(str1, str2));
+			  percentage = similarity(str1, str2);
+			  
+			}
+
+			function similarity(s1, s2) {
+			      var longer = s1;
+			      var shorter = s2;
+			      if (s1.length < s2.length) {
+			        longer = s2;
+			        shorter = s1;
+			      }
+			      var longerLength = longer.length;
+			      if (longerLength == 0) {
+			        return 1.0;
+			      }
+			      return (longerLength - editDistance(longer, shorter)) / parseFloat(longerLength);
+			    }
+
+			    function editDistance(s1, s2) {
+			      s1 = s1.toLowerCase();
+			      s2 = s2.toLowerCase();
+
+			      var costs = new Array();
+			      for (var i = 0; i <= s1.length; i++) {
+			        var lastValue = i;
+			        for (var j = 0; j <= s2.length; j++) {
+			          if (i == 0)
+			            costs[j] = j;
+			          else {
+			            if (j > 0) {
+			              var newValue = costs[j - 1];
+			              if (s1.charAt(i - 1) != s2.charAt(j - 1))
+			                newValue = Math.min(Math.min(newValue, lastValue),
+			                  costs[j]) + 1;
+			              costs[j - 1] = lastValue;
+			              lastValue = newValue;
+			            }
+			          }
+			        }
+			        if (i > 0)
+			          costs[s2.length] = lastValue;
+			      }
+			      return costs[s2.length];
+			    }
+			checkSimilarity();
+			}
+		};
+			
+	  	function addData(){
+		
+			var trans= document.getElementById('transcription').value;
+	  		//var checkpercent= document.getElementById('Check').value;
+		
+	  		if (trans ==""){
+				alert("Please type something first")
+			}else{
+  			
+				var html="";
+				
+			    
+		
+				   var tbodyRef = document.getElementById('resulttable').getElementsByTagName('tbody')[0];
+
+				   // Insert a row at the end of table
+				   var newRow = tbodyRef.insertRow();
+
+				   // Insert a cell at the end of the row
+				   var newCell1 = newRow.insertCell();
+				   
+				   // Insert a cell at the end of the row
+				   var newCell2 = newRow.insertCell();
+				   
+				   // Insert a cell at the end of the row
+				   var newCell3 = newRow.insertCell();
+
+				   // Append a text node to the cell
+				   var newText = document.createTextNode(filecontent);
+				   newCell1.appendChild(newText);
+				   
+				   // Append a text node to the cell
+				   var newText2 = document.createTextNode(trans);
+				   newCell2.appendChild(newText2);
+				   
+				   // Append a text node to the cell
+				//changing decimal to percentage & color of percentage if wrong
+				percentage= Math.round((percentage + Number.EPSILON) * 100)
+				   var newText3 =document.createTextNode(percentage.toString());
+				   newCell3.appendChild(newText3);
+				   
+ 
+	  			// This is wher the text function of appending the input should come!!!
+				
+	  		}
+		}
+			
+	  //WEBSPEECH START
+	        // Test browser support
+	        window.SpeechRecognition = window.SpeechRecognition       ||
+	                                   window.webkitSpeechRecognition ||
+	                                   null;
+ 
+	        if (window.SpeechRecognition === null) {
+	          document.getElementById('ws-unsupported').classList.remove('hidden');
+	          document.getElementById('button-play-ws').setAttribute('disabled', 'disabled');
+	          document.getElementById('button-stop-ws').setAttribute('disabled', 'disabled');
+	        } else {
+	          var recognizer = new window.SpeechRecognition();
+	          var transcription = document.getElementById('transcription');
+	          var log = document.getElementById('log');
+		  
+		
+ 
+	          // Recogniser doesn't stop listening even if the user pauses
+	          recognizer.continuous = true;
+	          // Start recognising
+	          recognizer.onresult = function(event) {
+	            transcription.textContent = '';
+ 		
+	           for (var i = event.resultIndex; i < event.results.length; i++) {
+	              if (event.results[i].isFinal) {
+	                transcription.textContent = event.results[i][0].transcript ;
+	              } else {
+	               transcription.textContent += event.results[i][0].transcript;
+	              }
+	  		  }
+  		
+	  		   }
+	         // Listen for errors
+	          recognizer.onerror = function(event) {
+	            log.innerHTML = 'Recognition error: ' + event.message + '<br />' + log.innerHTML;
+	          };
+ 
+	          document.getElementById('button-play-ws').addEventListener('click', function() {
+				  
+				 // alert(filecontent);
+		
+	            // Set if we need interim results
+	            recognizer.interimResults = document.querySelector('input[name="recognition-type"][value="interim"]').checked;
+ 
+	            try {
+	              recognizer.start();
+	              log.innerHTML = 'Recognition started' + '<br />' + log.innerHTML;
+	            } catch(ex) {
+	              log.innerHTML = 'Recognition error: ' + ex.message + '<br />' + log.innerHTML;
+	            }
+	          });
+	          document.getElementById('button-stop-ws').addEventListener('click', function() {
+	            recognizer.stop();
+	            log.innerHTML = 'Recognition stopped' + '<br />' + log.innerHTML;
+	          });
+	  		//create a single file and append each input. identify each input (java)
+	  		//
+	  		//read the file (java)
+	  		//remove identification and allocate into table. (java&html)
+	  		}
+	  		//Type Topic and question into website instead of recording it. this is because question does not need to be recorded. They can just be a keyword or really anything. The answer can be recorded. 
+			
+	  </script>
+  </body>
+</html>
